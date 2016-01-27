@@ -1,0 +1,2 @@
+The compress option has been deprecated. We recommend you use a dedicated css minifier, for instance see less-plugin-clean-css.
+@charset "utf-8";body,h1,h2,h3,h4,h5,h6,hr,p,ul,ol,li,form,fieldset,legend,button,input,textarea,th,td,img,div{margin:0;padding:0}body{font-size:16px;font-family:Verdana,Microsoft YaHei,Simsun}ul,ol{list-style:none}a{text-decoration:none}a:hover{text-decoration:underline}img{border:0}table{border-collapse:collapse;border-spacing:0}

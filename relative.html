@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定位</title>
+    <link href="public/reset.css" rel="stylesheet">
+    <style>
+        #div1{
+            height: 700px;
+            background-color: #5cb85c;
+        }
+        #div2{
+            width: 100px;
+            height: 100px;
+            background-color: #d58512;
+            position: absolute;
+            left: 50px;
+        }
+        #div3{
+            width: 300px;
+            height: 300px;
+            background-color: purple;
+            position: relative;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<p>
+    position: absolute;绝对定位：绝对定位是相对于元素最近的已定位的祖先元素（即是设置了绝对定位或者相对定位的祖先元素）。
+    如果元素没有已定位的祖先元素，那么它的位置则是相对于最初的包含块（body）。
+    绝对定位，设置后，原来的位置会被后面的内容占据。
+</p>
+<p>
+    position: relative;相对定位：相对定位是相对于元素在文档中的初始位置；
+    相对定位，设置后，原来的位置始终保留着。
+</p>
+
+<div id="div1">
+    <div id="div3">
+        <div id="div2"></div>
+    </div>
+</div>
+
+</body>
+</html>

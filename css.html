@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="public/reset.css" rel="stylesheet">
+    <title>css复习</title>
+    <style>
+        #div1{height: 300px;width:1000px;background-color: #ffff00;}
+        .bg1{width: 200px;height: 200px;margin:50px 20px;float:left;background: #5cb85c  url("public/image/4.png") no-repeat  left center}
+        .bg2{width: 200px;height: 200px;margin:50px 20px;float:left;background: url("public/image/i3.jpg") no-repeat;background-size: cover;border-radius: 50%}
+
+
+        .border1{width: 200px;height: 200px;margin:50px 20px;float:left;background-color: rgba(255, 172, 246, 1);border-radius: 10px; }
+        .border2{width: 188px;height: 188px;margin:50px 20px;padding:5px;float:left;background-color: #fff;border-radius: 5px;border: 1px solid #ddd }
+    </style>
+</head>
+<body>
+<p>
+    background缩写顺序：<br>
+    background: green url('smiley.gif') no-repeat fixed top center;<br>
+    background :background-color   background-image   background-repeat   background-attachment   background-position<br>
+    background-size:length|percentage|cover|contain;<br>
+    background-image:url('');<br>
+    background-repeat:no-repeat;<br>
+    background-attachment 属性设置背景图像是否固定或者随着页面的其余部分滚动。fixed表示固定位置，网页向下滑仍显示。
+</p>
+
+<div id="div1">
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+
+    <div class="border1"></div>
+    <div class="border2"><img src="public/image/i1.jpg" width="188" height="188"></div>
+</div>
+
+
+
+</body>
+</html>

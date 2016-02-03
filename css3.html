@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="public/common.css" rel="stylesheet">
+    <title>css3学习</title>
+    <style>
+        h1{
+            color: white;
+            text-shadow: 2px 2px 2px #000;
+            word-spacing: 10px;
+            letter-spacing: 10px;
+        }
+        .div1{
+            height: 200px;
+            background: url("public/image/3.jpg") no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .btn{
+            background: transparent;
+            border-radius: 5px;
+            font-size: 20px;
+            color: #fff;
+            padding: 6px 12px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .btnPosition{
+            position: absolute;
+            bottom: 10px;
+            left:46.5%
+        }
+
+        .dropDown{
+            position: relative;
+            display: inline-block;
+            float: right;
+        }
+
+        .dropBtn{
+            background-color: #5cb85c;
+            color: #fff;
+            padding: 12px;
+            font-size: 16px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropContent{
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 120px;
+            box-shadow:5px 5px 10px #ccc ;
+        }
+
+        .dropContent a{
+            text-decoration: none;
+            color: #000;
+            display: block;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .dropContent a:hover{
+            background-color: #ddd;
+        }
+
+        .dropDown:hover .dropContent{
+            display: block;
+        }
+
+        .dropDown:hover .dropBtn{
+            background-color: #3c763d;
+        }
+
+        .div2{
+            float: left;
+            margin-left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: palegoldenrod;
+            box-shadow: 10px 10px 15px #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>文本阴影hello world</h1>
+
+<div class="div1">
+    <div class="btnPosition">
+        <button class="btn">透明按钮</button>
+    </div>
+</div>
+
+<div class="dropDown">
+    <button class="dropBtn">下拉按钮</button>
+    <div class="dropContent">
+        <a href="#">选项一</a>
+        <a href="#">选项二</a>
+        <a href="#">选项三</a>
+    </div>
+</div>
+
+
+<div class="div2">
+div阴影
+</div>
+
+
+
+</body>
+</html>

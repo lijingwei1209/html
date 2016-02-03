@@ -35,9 +35,13 @@
 <script>
     var allInterest = $("input[name='interest']:checkbox");
     function  selectAll(){
-        allInterest.each(function(i,item){
+        /*allInterest.each(function(i,item){
             item.checked = true;
-        })
+        })*/
+
+        for(var i=0;i<allInterest.length;i++){
+            allInterest[i].checked = true;
+        }
     }
     function  noAll(){
         allInterest.each(function(i,item){

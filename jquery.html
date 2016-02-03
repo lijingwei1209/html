@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="public/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <title>jquery复习</title>
+</head>
+
+<body>
+
+<p>你好</p>
+
+<h1>标题</h1>
+
+<ul>
+    <li name="fruit" >苹果</li>
+    <li name="fruit" >桔子</li>
+    <li name="fruit" >香蕉</li>
+    <li name="fruit" >西瓜</li>
+    <li name="fruit" >水蜜桃</li>
+    <li name="fruit" >梨</li>
+</ul>
+
+<div>
+    <input type="checkbox" name="interest" value="sing">sing
+    <input type="checkbox" name="interest" value="sport">sport
+    <input type="checkbox" name="interest" value="film">film
+    <input type="checkbox" name="interest" value="game">game
+    <input type="checkbox" name="interest" value="read">read
+</div>
+
+<button onclick="selectAll()">全选</button>
+<button onclick="noAll()">全不选</button>
+<button onclick="reverseSelect()">反选</button>
+<script>
+    var allInterest = $("input[name='interest']:checkbox");
+    function  selectAll(){
+        allInterest.each(function(i,item){
+            item.checked = true;
+        })
+    }
+    function  noAll(){
+        allInterest.each(function(i,item){
+            item.checked = false;
+        })
+    }
+    function  reverseSelect(){
+        allInterest.each(function(i,item){
+            if(item.checked == false){
+                item.checked = true;
+            }else{
+                item.checked = false;
+            }
+        })
+    }
+    allInterest.click(function(){
+        if(this.checked == true){
+            allInterest.removeAttr("checked");
+            this.checked = true;
+        }
+    })
+</script>
+
+
+</body>
+<script>
+
+//    javascript写法
+    var p = document.getElementsByTagName("p");
+    p[0].innerHTML = "你不好";
+    p[0].style.color = "red";
+    p[0].setAttribute("id","p1");
+    console.log(p[0].getAttribute("id"));
+
+    var fruit = document.getElementsByName("fruit");
+    console.log(fruit[0].innerHTML);
+    console.log(fruit[1].innerText);
+
+
+    console.log("========================")
+//    jquery写法
+    $("h1").html("你非常不好");
+    $("h1").css("color","green");
+    $("h1").attr("id","h1");
+    console.log($("h1").attr("id"));
+
+    console.log($("li:eq(0)").html());
+    console.log($("li:first").html());
+    console.log($("li:first-child").html());
+    console.log($("li").eq(0).html());
+    console.log($("li").first().html());
+    console.log($("li:lt(1)").html());
+
+
+</script>
+
+</html>

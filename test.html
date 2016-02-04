@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3">
     <link href="public/common.css" rel="stylesheet">
     <title>Title</title>
     <style>
@@ -14,5 +15,13 @@
 <h3>h3</h3>
 <h4>h4</h4>
 <div>哈哈</div>
+
 </body>
+
+<script>
+    function show(){
+        return this;
+    }
+    document.getElementsByTagName("div")[0].innerHTML = show();
+</script>
 </html>

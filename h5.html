@@ -36,6 +36,26 @@
     </form>
 </section>
 
+<div style="margin: 0 auto;width: 300px">
+    <audio controls>
+        <source src="public/jiaru.mp3">
+    </audio>
+</div>
+
+<div style="width: 300px;margin: 0 auto">
+    <canvas id="canvas1" width="300px" height="200px" style="border: 1px solid green;"></canvas>
+    <script>
+        var c1 = document.getElementById("canvas1");
+        var ctx = c1.getContext("2d");
+        ctx.font="30px Arial";
+        ctx.fillText("Hello World",10,50);
+        ctx.strokeText("haha",200,50);
+        ctx.beginPath();
+        ctx.arc(50,100,40,0,2*Math.PI);
+        ctx.stroke();
+    </script>
+</div>
+
 <footer>
     <p>这是footer</p>
 </footer>

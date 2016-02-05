@@ -2,11 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="3">
+    <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;"/>
+    <!--<meta http-equiv="refresh" content="3">-->
     <link href="public/common.css" rel="stylesheet">
     <title>Title</title>
     <style>
         html { overflow-x:hidden; overflow-y:auto;}
+        #div1{width: 95%;margin: 0 auto;}
+        #div1 image{
+            max-width:100%;
+        }
     </style>
 </head>
 <body>
@@ -15,9 +20,53 @@
 <h3>h3</h3>
 <h4>h4</h4>
 <div>哈哈</div>
+<div id="div1">
+    <img src="public/image/1.jpg" >
+    <img src="public/image/2.jpg" >
+</div>
+
+<p>这是<sub>下标</sub>，这是<sup>上标</sup></p>
+<p>原价：<del>999</del>，现价：<ins>99</ins></p>
+<p><em>斜体</em><i>斜体</i><strong>加重</strong><u>啊</u></p>
+<p>
+    <address>“北京市”</address>
+    <blockquote>毛主席说：好好学习，天天向上</blockquote>
+    <q>我们都是好孩子</q>
+    <abbr title="中华人民共和国">china</abbr>
+</p>
+
+<table border="1"  >
+    <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>班级</th>
+    </tr>
+    <tr>
+        <td>小明</td>
+        <td>12</td>
+        <td>一班</td>
+    </tr>
+    <tr>
+        <td>小明</td>
+        <td>12</td>
+        <td>一班</td>
+    </tr>
+    <tr>
+        <td>小明</td>
+        <td>12</td>
+        <td>一班</td>
+    </tr>
+</table>
+
+<ol type="A">
+    <li>第一</li>
+    <li>第二</li>
+    <li>第三</li>
+</ol>
+
+
 
 </body>
-
 <script>
     function show(){
         return this;

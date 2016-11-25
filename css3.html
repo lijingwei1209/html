@@ -8,7 +8,9 @@
         h1{
             color: white;
             text-shadow: 2px 2px 2px #000;
+            /*用于单词之间距离*/
             word-spacing: 10px;
+            /*用于字母及汉字之间*/
             letter-spacing: 10px;
         }
         .div1{
@@ -17,6 +19,16 @@
             background-size: cover;
             position: relative;
         }
+
+        .div2{
+            float: left;
+            margin-left: 200px;
+            width: 100px;
+            height: 100px;
+            background-color: palegoldenrod;
+            box-shadow: 10px 10px 15px #ccc;
+        }
+
         .btn{
             background: transparent;
             border-radius: 5px;
@@ -78,40 +90,72 @@
             background-color: #3c763d;
         }
 
-        .div2{
-            float: left;
-            margin-left: 200px;
+        #div3{
+            width: 50px;
+            height: 50px;
+            background: #a94442;
+            transform: translate(100px, 100px) rotate(-45deg);
+            transition: width 2s, height 4s, transform 6s;
+        }
+
+        #div3:hover{
             width: 100px;
             height: 100px;
-            background-color: palegoldenrod;
-            box-shadow: 10px 10px 15px #ccc;
+            transform: rotate(270deg);
         }
+
+        #div4{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: #66afe9;
+            animation: myfirst 6s;
+        }
+        @keyframes myfirst{
+            0%  {left:0; top:300px; background: #66afe9}
+            25% {left:300px; top:300px; background: #3e8f3e}
+            50% {left:300px; top:600px; background: #a94442}
+            75% {left:0; top:600px; background: #c0a16b}
+            100%{left:0; top:300px; background: #66afe9}
+        }
+
+
+
     </style>
 </head>
 <body>
 
-<h1>文本阴影hello world</h1>
+    <h1>文本阴影hello world</h1>
 
-<div class="div1">
-    <div class="btnPosition">
-        <button class="btn">透明按钮</button>
+    <div class="div1">
+        <div class="btnPosition">
+            <button class="btn">透明按钮</button>
+        </div>
     </div>
-</div>
 
-<div class="dropDown">
-    <button class="dropBtn">下拉按钮</button>
-    <div class="dropContent">
-        <a href="#">选项一</a>
-        <a href="#">选项二</a>
-        <a href="#">选项三</a>
+
+    <div class="div2">
+         div阴影
     </div>
-</div>
 
 
-<div class="div2">
-div阴影
-</div>
+    <div id="div3">
+        旋转
+    </div>
 
+    <div id="div4">
+        动画
+    </div>
+
+
+    <div class="dropDown">
+        <button class="dropBtn">下拉按钮</button>
+        <div class="dropContent">
+            <a href="#">选项一</a>
+            <a href="#">选项二</a>
+            <a href="#">选项三</a>
+        </div>
+    </div>
 
 
 </body>

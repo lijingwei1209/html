@@ -5,8 +5,22 @@
     <meta name="keywords" content="关键字">
     <meta name="description" content="李静伟的网站">
     <title>iframe</title>
+    <link href="public/test.css" rel="stylesheet">
     <style>
         .wrap{margin: 10% auto;width: 800px;height: 200px}
+        .panorama {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-image: url(http://i4.piimg.com/1949/ae804dd84f87ba56.jpg);
+            background-size: auto 100%;
+            cursor: pointer;
+            margin: 0 auto;
+            box-shadow: 10px 12px 10px rgba(0,0,0,.3);
+        }
+        #test{
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -15,5 +29,10 @@
     <iframe src="test.html" width="800" height="100" scrolling="yes" class="center" frameborder="0" ></iframe>
 </div>
 
+<p class="panorama">
+    <img src="public/image/i1.jpg">
+</p>
+
+<p id="test" class="test" style="background-color: green">测试css的优先级</p>
 </body>
 </html>

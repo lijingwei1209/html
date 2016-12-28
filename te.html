@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--声明当前页面的编码格式 国际编码UTF-8 中文编码 GBK-->
+    <meta charset="UTF-8">
+    <!--声明当前页面的三要素-->
+    <meta name="Keywords" content="">
+    <meta name="Desription" content="">
+    <title>节点获取和删除</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        #canvas{
+            background: #000;
+        }
+    </style>
+
+</head>
+<body>
+    <canvas id="canvas"> 您的浏览器不支持canvas标签,请您更换浏览器 </canvas>
+    <script>
+        var  can = document.getElementById("canvas");
+        var  ctx = can.getContext("2d");
+
+        //设置canvas的宽高
+        var  w = can.width = window.innerWidth;
+        var  h = can.height = window.innerHeight;
+        var  counts = 30;
+        var  a = 0;
+
+        window.onresize = function(){
+            w = can.width = window.innerWidth;
+            h = can.height = window.innerHeight;
+        };
+        //绘制矩形
+        function Drop(){};
+        Drop.prototype = {
+
+            init: function(){//初始化雨滴的属性值(宽高,颜色,坐标)
+
+                this.x = random(0,w);//随机生成一个0-w之间的x坐标
+                this.y = 0;//Y坐标的初始值
+                this.vy = random(4,5);//随机生成一个雨滴下落的加速度
+                this.l = random(h*0.8,h*0.9);//雨滴最终消失的y的坐标
+                this.r = 1;//圆的初始位置
+                this.vr = 1;//圆的半径的更新速度
+                this.a = 1;//圆形的初始透明度
+                this.va = 0.96;//透明度更新系数
+            },
+            draw: function(){
+                if (this.y >= this.l) {//当雨滴下落为1的时候开始绘制圆形
+                    ctx.beginPath();//开始绘制
+                    ctx.arc(this.x, this.y, this.r, 0.2 * Math.PI, false);
+                    ctx.strokeStyle = "rgba(0,255,255," +this.a+")";
+                    ctx.stroke();
+
+                } else {
+                    //.fillStyle = "red";
+                    ctx.fillStyle = randomColor(this.a);//设置填充方式
+                    ctx.fillRect(this.x, this.y, 2, 10);
+                }
+                //更新坐标位置
+                this.update();
+            },
+            //跟新雨滴的坐标位置
+            update: function(){
+                if(this.y < this.l)
+                {
+                    this.y += this.vy;//更新y坐标
+                }else {
+                    if(this.a > 0.03)
+                    {
+                        this.r += this.vr;
+                        if(this.r > 50)
+                        {
+                            this.a *= this.va;
+                        }
+                    }
+                }
+            }
+        }
+
+//        var  drops = new Drop();
+//        function move(){
+//            ctx.clearRect(0,0,w,h);
+//            for( var i=0; i <drops.length ; i++ ){
+//                drops[i].draw();
+//            }
+//            requestAnimationFrame(move);//帧动画
+//        }
+//        move();
+
+        //实例化雨滴对象
+        var  drop = new Drop();
+        drop.init();//初始化添加属性
+        drop.draw();//绘制出来
+
+        //不断更新雨滴的位置
+        /*
+         setInterval(function (){
+         ctx.clearRect(0,0,w,h);
+         drop.draw();
+         },100);*/
+        //递归循环更新雨滴位置
+        function move(){
+            ctx.clearRect(0,0,w,h);
+            drop.draw();
+            requestAnimationFrame(move);//帧动画
+        }
+        move();
+        //延迟
+        function setDrop(){
+            for(var  i = 0 ; i < counts;i++){
+                (function(j){//j是形参
+                    setTimeout(function(){
+                       // console.log(i);
+                        var  drop = new Drop();
+                        drop.init();
+                        drop.draw();
+                    },j*200);
+                })(i)
+            }
+        }
+        setDrop();
+        function random(min,max){
+            //Math.random()生成0-1之间的随机数
+           return Math.random()*(max - min) + min;
+        }
+        //生成随机数颜色的方法
+        function randomColor(){
+            var r = Math.floor(Math.random()*255);
+            var g = Math.floor(Math.random()*255);
+            var b = Math.floor(Math.random()*255);
+            return "rgba("+r+","+g+","+b+","+a+")";
+        }
+    </script>
+
+</body>
+</html>

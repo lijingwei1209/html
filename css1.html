@@ -5,6 +5,10 @@
     <title>Title</title>
     <style>
         ul{list-style-type: upper-alpha}
+
+        div p{color: red}
+        div+p{color: greenyellow}
+        /*div ~p{color: blue}*/
     </style>
 </head>
 <body>
@@ -23,5 +27,8 @@
     <p>段落3</p>
     <p>段落4</p>
 </div>
+<p>段落0</p>
+<p>段落5</p>
+<p style="width: 200px;word-wrap:break-word">This paragraph contains a very long word: thisisaveryveryveryveryveryverylongword. The long word will break and wrap to the next line.</p>
 </body>
 </html>

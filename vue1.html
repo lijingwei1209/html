@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="public/vue/vue.min.js"></script>
+    <title>vue</title>
+    <style>
+        .bgClass{
+            background-color: #2b542c;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <p>{{ message }}</p>
+    <div v-html="html"></div>
+    <button v-on:click="reverseMessage">反转字符串</button>
+    <button @click="reverseMessage">反转字符串</button>
+    <label for="check">修改颜色</label><input type="checkbox" id="check" v-model="myBoolean">
+    <div v-bind:class="{'bgClass':myBoolean}">
+        为什么这样！
+    </div>
+</div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            html:'<h1>hello,html</h1>',
+            myBoolean: false
+        },
+        methods: {
+            reverseMessage: function () {
+                console.log(this.message.split(''));
+                this.message = this.message.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+</html>
